@@ -2,3 +2,7 @@
 *.csv
 *.json
 /.hisotry/
+/path_to_model/
+*.pdf
+*.pkl
+.env
