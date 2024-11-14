@@ -5,4 +5,11 @@
 /path_to_model/
 *.pdf
 *.pkl
+.txt
 .env
+.DS_Store
+scrape.py
+shit*
+/__pycache__/
+*.pyc
+/embedding_model/
