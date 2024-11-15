@@ -74,7 +74,7 @@ Q : ATLASの総質量は？ (7000 ton)
 Q : LHCはいつから運用されていますか？ (2008年 9月 10日)
 >LHCは2008年9月10日に初めて運用が始まりました。CERNの加速器複合体の最新の追加です。LHCは、27kmの環状の超伝導磁石と、粒子のエネルギーを高めるための加速構造で構成されています。  
 Reference(s):  
-> https://home.cern/science/accelerators/large-hadron-collider
+> https://home.cern/science/accelerators/large-hadron-collider  
 > https://home.cern/science/accelerators/large-hadron-collider
 
 Q : LHCのデータ量は?
@@ -88,11 +88,11 @@ Q : LHCのデータ量は?
 >
 >LHCのデータは、CERNのOpen Data Portalで公開されています。このポータルでは、ALICE、ATLAS、CMS、LHCbの4つの実験のデータが公開されています。各実験のデータは、異なる形式で提供されていますが、一般的にROOT形式で提供されています。
 >
->LHCのデータは、CERNのOpen Data Portalでダウンロードすることができます。このポータルでは、データのダウンロード方法や、データの使用に関するガイドラインも提供されています。
->Reference(s):
->https://home.cern/science/computing/open-source-open-science
->https://home.cern/science/experiments
->https://home.cern/science/experiments
+>LHCのデータは、CERNのOpen Data Portalでダウンロードすることができます。このポータルでは、データのダウンロード方法や、データの使用に関するガイドラインも提供されています。  
+Reference(s):  
+>https://home.cern/science/computing/open-source-open-science  
+>https://home.cern/science/experiments  
+>https://home.cern/science/experiments  
 >https://home.cern/science/experiments/cms
 
 
