@@ -62,7 +62,7 @@ To change the model, just replace `model_name` to other model name.
 You can use rag as discord bot via discord bot API by using discord.py.  
 DISCORD_BOT_TOKEN is required to use this feature. You can get the token from discord developer portal.
 
-## Spec
+## Validation
 
 Tried some questions and validated the result.
 
