@@ -62,6 +62,40 @@ To change the model, just replace `model_name` to other model name.
 You can use rag as discord bot via discord bot API by using discord.py.  
 DISCORD_BOT_TOKEN is required to use this feature. You can get the token from discord developer portal.
 
+## Spec
+
+Tried some questions and validated the result.
+
+Q : ATLASの総質量は？ (7000 ton)  
+>RAG A :  
+>ATLASの総質量は7000トンです。  
+>Source: https://home.cern/science/experiments/atlas
+
+Q : LHCはいつから運用されていますか？ (2008年 9月 10日)
+>LHCは2008年9月10日に初めて運用が始まりました。CERNの加速器複合体の最新の追加です。LHCは、27kmの環状の超伝導磁石と、粒子のエネルギーを高めるための加速構造で構成されています。  
+Reference(s):  
+> https://home.cern/science/accelerators/large-hadron-collider
+> https://home.cern/science/accelerators/large-hadron-collider
+
+Q : LHCのデータ量は?
+>LHCのデータ量は、非常に大きなものです。LHCは、1秒間に40MHzの衝突を生成し、1つの衝突で1MBのデータが生成されます。このため、1秒間に40MBのデータが生成されます。1日で28800秒がありますから、1日で1.15TBのデータが生成されます。LHCは、1年で300日程度運営されるため、1年で345TBのデータが生成されます。
+>
+>LHCのデータは、CERNのOpen Data Portalで公開されています。このポータルでは、ALICE、ATLAS、CMS、LHCbの4つの実験のデータが公開されています。各実験のデータは、異なる形式で提供されていますが、一般的にROOT形式で提供されています。
+>
+>LHCのデータは、研究者たちが素粒子物理学の研究に使用しています。このデータを分析することで、新しい粒子の発見や既知の粒子の性質の詳細な研究が行われます。
+>
+>LHCのデータは、CERNのOpen Data Portalでダウンロードすることができます。このポータルでは、データのダウンロード方法や、データの使用に関するガイドラインも提供されています。
+>
+>LHCのデータは、CERNのOpen Data Portalで公開されています。このポータルでは、ALICE、ATLAS、CMS、LHCbの4つの実験のデータが公開されています。各実験のデータは、異なる形式で提供されていますが、一般的にROOT形式で提供されています。
+>
+>LHCのデータは、CERNのOpen Data Portalでダウンロードすることができます。このポータルでは、データのダウンロード方法や、データの使用に関するガイドラインも提供されています。
+>Reference(s):
+>https://home.cern/science/computing/open-source-open-science
+>https://home.cern/science/experiments
+>https://home.cern/science/experiments
+>https://home.cern/science/experiments/cms
+
+
 ## References
 
 - [intfloat/multilingual-e5-large-instruc](https://huggingface.co/intfloat/multilingual-e5-large-instruct "multilingual-e5-large-instruc")

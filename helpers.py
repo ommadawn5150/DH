@@ -3,10 +3,9 @@ from IPython.display import Markdown, display
 from langchain.prompts import PromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough
+'''
 
-class LLM():
-    prompt_template = """
-        <|system|>
+You are very knowledgeable about particle physics.
         Use the following pieces of context to answer the question at the end. : {context}
         And you need to answer with following engagements;
             - If you don't know the answer, just say that you don't know, don't try to make up an answer.
@@ -19,6 +18,26 @@ class LLM():
             - Emphasis should be used to terminologies.
             - Give sources you used at the end.
             - Answer in Japanese.
+            - Don't repeat a sentence in the answer.
+'''
+class LLM():
+    prompt_template = """
+        <|system|>
+        <s>
+        あなたは素粒子物理学にとても詳しい。
+        次の文脈を使って、最後の質問に答えてください。: {context}
+        そして、次のような係り受けで答える必要があります；
+            - 答えがわからない場合は、ただわからないと言い、答えを作ろうとしないでください。
+            - コードを表示するときはマークダウン・フォーマットを使用すること。
+            - 適切な文法と句読点を使用すること。
+            - ユーザーの助けになると思うのであれば、追加情報を加えてください。
+            - 段落ごとに改行してください。
+            - 完全な文章を使用してください。
+            - マークダウン書式を使用する。
+            - 用語は強調すること。
+            - 最後に使用したソースを示す。
+            - 日本語で回答すること。
+            - 答えの中で文章を繰り返さないこと。
         </s>
         <|user|>
         {question}
@@ -34,9 +53,10 @@ class LLM():
         self.client = ChatGroq(
                             model = self.model_name,
                             temperature=0,
-                            max_tokens=None,
-                            timeout=10,
-                            max_retries=2
+                            max_tokens=1024,
+                            top_p=1,
+                            frequency_penalty=0,
+                            max_retries=1,
                             )
 
         if prompt_template != "":

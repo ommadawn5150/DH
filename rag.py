@@ -2,17 +2,14 @@ import pickle
 import os
 
 embeddings_model_name = "intfloat/multilingual-e5-base"
-embeddings_path = "./path_to_model/intfloat/multilingual-e5-base"
+embeddings_path = f"./embedding_model/{embeddings_model_name}"
 TOKEN = os.getenv('DISCORD_BOT_TOKEN')
-
-from langchain.indexes import VectorstoreIndexCreator
-from langchain.text_splitter import CharacterTextSplitter
-from langchain_community.vectorstores import Chroma
 
 with open('retriever.pkl','rb') as f:
     retriever = pickle.load(f)
 
 from helpers import LLM
+import timeout_decorator 
 
 llm = LLM()
 
@@ -27,7 +24,6 @@ intents.members = True
 intents.messages = True
 intents.message_content = True
 client = discord.Client(intents=intents)
-CHANNEL_IDs = [1248267523187802113,1224164970653290598] 
 
 # 起動時に動作する処理
 @client.event
@@ -38,9 +34,14 @@ async def on_ready():
         #await client.get_channel(CHANNEL_ID).send('ログインしました')
 
 # 返信する非同期関数を定義
+@timeout_decorator.timeout(1)
 async def reply(message):
-    reply = llm.chat(message.content, retriever, show=False, source=False)
-    reply = reply.replace("<@1304329870632947732>",'')
+    try:
+        reply = llm.chat(message.content, retriever, show=False)
+        reply = reply.replace("<@1304329870632947732>",'')
+    except Exception as e:
+        reply = "エラー ><"
+        print(e)
     print(reply)
     await message.channel.send(reply) # 返信メッセージを送信
 
