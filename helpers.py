@@ -34,7 +34,7 @@ class LLM():
             - 完全な文章を使用してください。
             - マークダウン書式を使用する。
             - 専門的な用語は強調すること。
-            - 最後に使用したソースを示す。
+            - 最後に改行して使用したsourceを示す。
             - 答えの中で文章を繰り返さないこと。
             - 日本語で回答すること。
         </s>
@@ -42,7 +42,10 @@ class LLM():
         <s>
         {question}
         </s>
+        <|source|>
+        <s>
         {source}
+        </s>
     """
     model_name = "llama3-groq-70b-8192-tool-use-preview"
 
@@ -75,7 +78,7 @@ class LLM():
         self.llm_chain = self.prompt | self.client | StrOutputParser()
 
     def format_docs(self,docs):
-        return "\n\n".join(doc.page_content for doc in docs)
+        return "\n\n".join(doc.page_content for doc in docs) + "\n\n"
 
     def format_sources(self,docs):
         """
@@ -90,7 +93,7 @@ class LLM():
                 res.append(i)
         sources = res
         # Join the sources into a single string to pass to the LLM
-        return "\nSources:\n" + "\n".join(sources)
+        return "\n\nSources:\n\n" + "\n\n".join(sources)
     
     def show_markdown(self, markdown_text,title=None):
         display(Markdown(title + markdown_text))

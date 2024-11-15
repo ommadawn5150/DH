@@ -60,9 +60,9 @@ multilingual-e5 has 4 tyoes for its size, every size and # of dimension is follo
 ### Groq 
 
 This rag is using groq api. The api is availabel for free now ('24/11/14), but it might costs in the future.  
-Default llm model is using `llama3-groq-70b-8192-tool-use-preview`. ([Groq](https://groq.com/introducing-llama-3-groq-tool-use-models/))
-You can see available models here https://console.groq.com/docs/models .  
-To change the model, just replace `model_name` to other model name.
+Default llm model is using [`llama3-groq-70b-8192-tool-use-preview`](https://groq.com/introducing-llama-3-groq-tool-use-models/).  
+You can see other available models here https://console.groq.com/docs/models .  
+To change the model, just replace `model_name` to other model name in `helpers.py`.
 
 
 ### discord.py
@@ -75,34 +75,30 @@ DISCORD_BOT_TOKEN is required to use this feature. You can get the token from di
 Tried some questions and validated the result.
 
 Q : ATLASの総質量は？ (7000 tonne)  
->RAG A :  
->ATLASの総質量は7000トンです。  
->Source: https://home.cern/science/experiments/atlas
+>ATLASの総質量は、約7,000トンです。この質量は、検出器の大きさと複雑さを反映しています。ATLASは、LHCの4つの主要検出器の1つで、素粒子物理学の研究に使用されています。
+>
+>Source: https://home.cern/science/experiments/l3
 
 Q : LHCはいつから運用されていますか？ (2008年 9月 10日)
->LHCは2008年9月10日に初めて運用が始まりました。CERNの加速器複合体の最新の追加です。LHCは、27kmの環状の超伝導磁石と、粒子のエネルギーを高めるための加速構造で構成されています。  
-Reference(s):  
-> https://home.cern/science/accelerators/large-hadron-collider  
-> https://home.cern/science/accelerators/large-hadron-collider
+>LHCは2008年9月10日に初めて陽子ビームを加速し、2010年3月30日に7TeVで運用を開始しました。2013年2月13日にLHCは、2015年4月5日に13TeVで運用を再開しました。LHCは、2023年まで運用を続ける予定です。 
+>
+>Reference(s):
+>https://home.cern/science/engineering/restarting-lhc-why-13-tev
 
 Q : LHCのデータ量は?
->LHCのデータ量は、非常に大きなものです。LHCは、1秒間に40MHzの衝突を生成し、1つの衝突で1MBのデータが生成されます。このため、1秒間に40MBのデータが生成されます。1日で28800秒がありますから、1日で1.15TBのデータが生成されます。LHCは、1年で300日程度運営されるため、1年で345TBのデータが生成されます。
+>LHCのデータ量は、13TeVの衝突エネルギーで運転することで、より多くの粒子衝突イベントが生成されるため、従来の7TeVの運転時よりも大幅に増加します。この高エネルギーでの運転は、新しい粒子の検出や、既知の粒子の性質の詳細な研究を可能にするデータを提供します。
 >
->LHCのデータは、CERNのOpen Data Portalで公開されています。このポータルでは、ALICE、ATLAS、CMS、LHCbの4つの実験のデータが公開されています。各実験のデータは、異なる形式で提供されていますが、一般的にROOT形式で提供されています。
->
->LHCのデータは、研究者たちが素粒子物理学の研究に使用しています。このデータを分析することで、新しい粒子の発見や既知の粒子の性質の詳細な研究が行われます。
->
->LHCのデータは、CERNのOpen Data Portalでダウンロードすることができます。このポータルでは、データのダウンロード方法や、データの使用に関するガイドラインも提供されています。
->
->LHCのデータは、CERNのOpen Data Portalで公開されています。このポータルでは、ALICE、ATLAS、CMS、LHCbの4つの実験のデータが公開されています。各実験のデータは、異なる形式で提供されていますが、一般的にROOT形式で提供されています。
->
->LHCのデータは、CERNのOpen Data Portalでダウンロードすることができます。このポータルでは、データのダウンロード方法や、データの使用に関するガイドラインも提供されています。  
-Reference(s):  
->https://home.cern/science/computing/open-source-open-science  
->https://home.cern/science/experiments  
->https://home.cern/science/experiments  
->https://home.cern/science/experiments/cms
+>Source: https://home.cern/science/engineering/restarting-lhc-why-13-tev
 
+Q : ATLAS検出器の構造は？
+>ATLAS検出器は、LHCの4つの主要検出器の1つです。ATLAS検出器は、粒子衝突の詳細を捉えるために設計されています。検出器の構造は、以下の4つの主要部分で構成されています。
+>- **Inner Detector (ID)**: これは、粒子の軌跡を捉えるための最も内側の検出器です。IDは、シリコンの微細なピクセル検出器、シリコンのストリップ検出器、トランスション・レジストリー・トラッカー（TRT）で構成されています。
+>- **Calorimeters**: これらは、粒子のエネルギーを測定するための検出器です。ATLASのCalorimetersは、Electromagnetic Calorimeter（EMCal）とHadronic Calorimeter（HCal）で構成されています。
+>- **Muon Spectrometer**: これは、ミューオンの検出と測定を行うための検出器です。Muon Spectrometerは、ミューオン・トラッカーとミューオン・カロリメータで構成されています。
+>- **Trigger and Data Acquisition**: これは、検出器が捉えたデータを処理し、有用な情報を抽出するためのシステムです。
+>
+>ATLAS検出器は、LHCの13TeVの衝突エネルギーで粒子を捉えるように設計されています。このエネルギーは、素粒子物理学の研究において、新しい粒子や相互作用の発見を可能にする高エネルギー領域を探検することを目的としています。
+>- **Source:** [1](https://home.cern/science/experiments/l3), [2](https://home.cern/science/experiments), [3](https://home.cern/science/engineering/restarting-lhc-why-13-tev), [4](https://home.cern/fr/science/accelerators)
 
 ## References
 

@@ -16,8 +16,6 @@ llm = LLM()
 # インストールした discord.py を読み込む
 import discord
 
-# 自分のBotのアクセストークンに置き換えてください
-
 # 接続に必要なオブジェクトを生成
 intents=discord.Intents.default()
 intents.members = True
@@ -38,7 +36,7 @@ async def on_ready():
 async def reply(message):
     try:
         reply = llm.chat(message.content, retriever, show=False)
-        reply = reply.replace("<@1304329870632947732>",'')
+        reply = reply.replace("<@1304329870632947732>",'') # 自分のbotのIDに変更
     except Exception as e:
         reply = "エラー ><"
         print(e)
