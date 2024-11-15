@@ -35,7 +35,10 @@ To install this RAG sytem, follow these steps:
 Open `rag.ipynb` and follow the notebook instruction.  
 
 ### discord bot
-Execute `python3 rag.py` on venv shell.
+
+Before running the bot, make sure you have set the environment variable `DISCORD_BOT_TOKEN` with your discord bot token and you have invited the bot to your server.
+And you need to save document loader which is made in `rag.ipynb` as pickle file.  
+After above preparation, execute `python3 rag.py` on venv shell.
 
 ## Features
 
