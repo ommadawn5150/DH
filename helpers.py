@@ -39,6 +39,7 @@ class LLM():
             - 日本語で回答すること。
         </s>
         <|user|>
+        <s>
         {question}
         </s>
         {source}
@@ -53,9 +54,7 @@ class LLM():
                             model = self.model_name,
                             temperature=0,
                             max_tokens=1024,
-                            top_p=1,
-                            frequency_penalty=0,
-                            max_retries=1,
+                            max_retries=2,
                             )
 
         if prompt_template != "":
@@ -91,7 +90,7 @@ class LLM():
                 res.append(i)
         sources = res
         # Join the sources into a single string to pass to the LLM
-        return "Sources:\n" + "\n".join(sources)
+        return "\nSources:\n" + "\n".join(sources)
     
     def show_markdown(self, markdown_text,title=None):
         display(Markdown(title + markdown_text))
