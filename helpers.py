@@ -1,8 +1,4 @@
-# For download embeddings model
-# For langchain_groq
 from langchain_groq import ChatGroq
-
-# For Rag chain
 from IPython.display import Markdown, display
 from langchain.prompts import PromptTemplate
 from langchain_core.output_parsers import StrOutputParser
@@ -15,6 +11,11 @@ class LLM():
         And you need to answer with following engagements;
             - If you don't know the answer, just say that you don't know, don't try to make up an answer.
             - Use markdown formatting when displaying code.
+            - Use proper grammar and punctuation.
+            - Add additional information if you think it will help the user.
+            - Start a new line for each paragraph.
+            - Use complete sentences.
+            - Use markdown formatting.
             - Emphasis should be used to terminologies.
             - Give sources you used at the end.
             - Answer in Japanese.
@@ -92,7 +93,7 @@ class LLM():
 
         response = rag_chain.invoke(user_input)
 
-        if show : self.show_markdown(response, title="# Trained RAG Answer\n")
+        if show : self.show_markdown(response, title="# Answer\n")
         return response
     
     def not_fine_tuned_chat(self, user_input, show=True):
