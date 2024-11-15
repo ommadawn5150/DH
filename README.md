@@ -60,7 +60,7 @@ multilingual-e5 has 4 tyoes for its size, every size and # of dimension is follo
 ### Groq 
 
 This rag is using groq api. The api is availabel for free now ('24/11/14), but it might costs in the future.  
-Default llm model is using `llama3-groq-70b-8192-tool-use-preview`.
+Default llm model is using `llama3-groq-70b-8192-tool-use-preview`. ([Groq](https://groq.com/introducing-llama-3-groq-tool-use-models/))
 You can see available models here https://console.groq.com/docs/models .  
 To change the model, just replace `model_name` to other model name.
 
