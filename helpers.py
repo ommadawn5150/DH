@@ -4,7 +4,6 @@ from langchain.prompts import PromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough
 '''
-
 You are very knowledgeable about particle physics.
         Use the following pieces of context to answer the question at the end. : {context}
         And you need to answer with following engagements;
@@ -24,7 +23,7 @@ class LLM():
     prompt_template = """
         <|system|>
         <s>
-        あなたは素粒子物理学にとても詳しい。
+        あなたは素粒子物理学のエキスパートです。
         次の文脈を使って、最後の質問に答えてください。: {context}
         そして、次のような係り受けで答える必要があります；
             - 答えがわからない場合は、ただわからないと言い、答えを作ろうとしないでください。
@@ -34,10 +33,10 @@ class LLM():
             - 段落ごとに改行してください。
             - 完全な文章を使用してください。
             - マークダウン書式を使用する。
-            - 用語は強調すること。
+            - 専門的な用語は強調すること。
             - 最後に使用したソースを示す。
-            - 日本語で回答すること。
             - 答えの中で文章を繰り返さないこと。
+            - 日本語で回答すること。
         </s>
         <|user|>
         {question}
@@ -85,7 +84,12 @@ class LLM():
         This function ensures that the source information is passed to the LLM as part of the context.
         """
         # Extract sources (e.g., URLs or document titles) from metadata
-        sources = [doc.metadata.get('source', 'Unknown Source') for doc in docs]
+        sources = [doc.metadata.get('source', 'Unknown Source') for doc in docs ]
+        res = []
+        for i in sources:
+            if i not in res:
+                res.append(i)
+        sources = res
         # Join the sources into a single string to pass to the LLM
         return "Sources:\n" + "\n".join(sources)
     

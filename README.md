@@ -30,6 +30,7 @@ Open `rag.ipynb` and follow the notebook instruction.
 
 ### discord bot
 Set discord bot TOKEN as environment variable: `export DISCORD_BOT_TOKEN={YOUR_TOKEN}`  
+You need to invite the bot to your server.  
 Execute `python3 rag.py` on the shell
 
 ## Features
@@ -66,7 +67,7 @@ DISCORD_BOT_TOKEN is required to use this feature. You can get the token from di
 
 Tried some questions and validated the result.
 
-Q : ATLASの総質量は？ (7000 ton)  
+Q : ATLASの総質量は？ (7000 tonne)  
 >RAG A :  
 >ATLASの総質量は7000トンです。  
 >Source: https://home.cern/science/experiments/atlas
