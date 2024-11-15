@@ -2,13 +2,13 @@
 
 ## Web based RAG system
 
-This is a web based RAG system for CERN LHC. RAG is a model that can generate answer from given question and context. 
+This is a web based RAG (Retrieval-augmented generation) system for CERN LHC. RAG is a model that can generate answer from given question and context. 
 When you ask a question, RAG will find the answer from the context and return it.
 You can use this system via Jupyter notebook or discord bot. 
 
 ## Installation
 
-To install this RAG, follow these steps:
+To install this RAG sytem, follow these steps:
 
 ### Environment setup
 
@@ -23,15 +23,19 @@ To install this RAG, follow these steps:
 1. Get the groq API key : https://console.groq.com/
 2. Set api key as environment variable: `export GROQ_API_KEY={YOUR_API_KEY}`
 
+### Discord bot setup
+
+1. Get the discord bot token from discord developer portal: https://discordapp.com/developers/applications/
+2. Set discord bot TOKEN as environment variable: `export DISCORD_BOT_TOKEN={YOUR_TOKEN}`
+3. Invite the bot to your server
+
 ## Usage
 
 ### Jupyter notebook
 Open `rag.ipynb` and follow the notebook instruction.  
 
 ### discord bot
-Set discord bot TOKEN as environment variable: `export DISCORD_BOT_TOKEN={YOUR_TOKEN}`  
-You need to invite the bot to your server.  
-Execute `python3 rag.py` on the shell
+Execute `python3 rag.py` on venv shell.
 
 ## Features
 
